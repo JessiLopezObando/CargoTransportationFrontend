@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="sign--container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="sign--form">
+      <h1 class="sign--title">Login</h1>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error *ngIf="email?.errors && email?.touched"
+          >"Type a rigth email"</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" />
+        <mat-error *ngIf="password?.errors && password?.touched"
+          >"Check your password, at least 6 characters long "</mat-error
+        >
+      </mat-form-field>
+      <button mat-raised-button color="primary">Login</button>
+    </form>
+  </div>
