@@ -1,0 +1,55 @@
+<div class="sign--container">
+    <form [formGroup]="myForm" (change)="sendInfo()" class="sign--form">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error *ngIf="email?.errors && email?.touched"
+          >"Type a rigth email"</mat-error
+        >
+      </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="name?.errors && name?.touched"
+            >"Type your name"</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Lastname</mat-label>
+          <input matInput formControlName="lastName" />
+          <mat-error *ngIf="lastName?.errors && lastName?.touched"
+            >"Type your lastName"</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input type="number" matInput formControlName="age" />
+            <mat-error *ngIf="age?.errors && age?.touched"
+              >"Type a age between 18 and 65 years old"</mat-error
+            >
+          </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" />
+            <mat-error *ngIf="password?.errors && password?.touched"
+              >"Check your password, at least 6 characters long "</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Confirm password</mat-label>
+            <input type="password" matInput formControlName="confirmPassword" />
+            <mat-error *ngIf="password?.errors && password?.touched"
+              >"Check your password, at least 6 characters long "</mat-error
+            >
+          </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Phone</mat-label>
+          <input type="number" matInput formControlName="phone" />
+          <mat-error *ngIf="phone?.errors && phone?.touched"
+            >"Type a phone"</mat-error
+          >
+        </mat-form-field>
+
+      </form>
+    </div>
