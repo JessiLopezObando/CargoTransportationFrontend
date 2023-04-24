@@ -20,6 +20,7 @@ export class DriverComponent implements OnInit {
       name: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
+      dni: ['', [Validators.required]],
       phone: ['', [Validators.required]],
       age: ['', [Validators.required,Validators.min(18), Validators.max(65)]],
       password: ['', [Validators.required, Validators.minLength(4)]],
@@ -53,6 +54,10 @@ export class DriverComponent implements OnInit {
 
   get confirmPassword() {
     return this.myForm.get('confirmPassword');
+  }
+
+  get dni() {
+    return this.myForm.get('dni');
   }
 
   sendInfo(){
