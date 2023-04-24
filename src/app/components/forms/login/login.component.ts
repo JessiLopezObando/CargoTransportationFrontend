@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -27,12 +27,8 @@ export class LoginComponent {
     });
   }
 
-  async onSubmit(form: FormGroup) {
-    try {
-
-    } catch (err) {
-      console.log(err);
-    }
+  loggin() {
+    console.log(this.myForm.value);
   }
 
   get email() {

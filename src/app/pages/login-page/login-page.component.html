@@ -1,19 +1,15 @@
 <div class="container--form">
-    <mat-slide-toggle (change)="onClickSlideToggle()" class="slide--option">
-        <p>
-            {{
-                showText
-              }}
-        </p>
-    </mat-slide-toggle>
-      
-      <ng-template [ngIf]="!showRegisterForm" [ngIfElse]="register">
-        <app-login></app-login>
-      </ng-template>
-      
-      <ng-template #register>
-        <app-register></app-register>
-      </ng-template>
+  <mat-slide-toggle (change)="onClickSlideToggle()" class="slide--option">
+    <p>
+      {{ showText }}
+    </p>
+  </mat-slide-toggle>
+
+  <ng-template [ngIf]="!showRegisterForm" [ngIfElse]="register">
+    <app-login></app-login>
+  </ng-template>
+
+  <ng-template #register>
+    <app-register></app-register>
+  </ng-template>
 </div>
-
-
