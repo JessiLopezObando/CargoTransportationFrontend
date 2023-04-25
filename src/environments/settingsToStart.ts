@@ -1,1 +1,1 @@
-export const urlBackend = 'http://localhost:8090/';
+export const urlBackend = 'http://cargotransportationbackend-production.up.railway.app/';
