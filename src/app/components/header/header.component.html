@@ -1,1 +1,12 @@
-<p>header works!</p>
+<header class="header">
+    <div class="logo"><a routerLink="/home"><img class="logo--header" src="https://cdn-icons-png.flaticon.com/512/59/59162.png?w=826&t=st=1682451591~exp=1682452191~hmac=d2b20a031dd46aaef827f84eebb797968efadaaf3e6e47eaa65b5b7a44ff9f2f" alt=""></a></div>
+    <nav>
+      <!-- Navigation links go here -->
+    </nav>
+    <div class="action--header">
+      <h2 *ngIf="driver">Welcome {{driver.username}}</h2>
+      <a class="options--header" routerLink="/dashboard" *ngIf="!isDashboardRoute()">Driver Zone</a>
+      <i class="material-icons" *ngIf="isLogged" (click)="logout()">logout</i>
+    </div>
+    
+  </header>
