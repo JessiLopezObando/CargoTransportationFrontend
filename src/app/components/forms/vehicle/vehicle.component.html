@@ -17,7 +17,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Model</mat-label>
-          <input type="number" matInput formControlName="model" />
+          <input matInput formControlName="model" />
           <mat-error *ngIf="model?.errors && model?.touched"
             >"Type a model"</mat-error
           >

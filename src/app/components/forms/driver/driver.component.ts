@@ -23,8 +23,8 @@ export class DriverComponent implements OnInit {
       dni: ['', [Validators.required]],
       phone: ['', [Validators.required]],
       age: ['', [Validators.required,Validators.min(18), Validators.max(65)]],
-      password: ['', [Validators.required, Validators.minLength(4)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 

@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AuthFireGuard } from './guards/auth-fire.guard';
 
 
 const routes: Routes = [
@@ -18,6 +20,11 @@ const routes: Routes = [
   {
     path:"login",
     component: LoginPageComponent
+  },
+  {
+    path:"dashboard",
+    component: DashboardComponent,
+    canActivate:[AuthFireGuard]
   },
   { path: '**', pathMatch: 'full', component: NotFoundComponent},
 ];
