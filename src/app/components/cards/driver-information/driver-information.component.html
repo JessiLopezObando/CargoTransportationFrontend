@@ -10,7 +10,7 @@
     
         
         <div class="action--container">
-            <button mat-flat-button color="accent">Edit</button>
+            <app-edit-driver-buttom [driver]="driver" (infoDriver)="updateDriverInformation($event)"></app-edit-driver-buttom>
         </div></mat-card-content>
   </mat-card>
 

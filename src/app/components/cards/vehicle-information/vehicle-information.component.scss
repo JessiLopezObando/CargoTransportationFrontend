@@ -1,6 +1,7 @@
 mat-card {
+  margin-top: 1%;
   padding: 4%;
-  width: 20vw;
+  width: 30vw;
   /* From https://css.glass */
   background: rgba(241, 241, 241, 0.22);
   border-radius: 16px;
@@ -14,4 +15,11 @@ mat-card {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  mat-card {
+    width: 80vw;
+  }
+
 }

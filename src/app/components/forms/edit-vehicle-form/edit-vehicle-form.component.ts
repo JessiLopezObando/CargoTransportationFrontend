@@ -24,7 +24,6 @@ export class EditVehicleFormComponent {
   }
 
   ngOnInit(): void {
-    console.log(this.data.driver?.vehicle?.plate);
     this.myForm = this.fb.group({
       plate: [this.data.driver.vehicle.plate, [Validators.required]],
       brand: [this.data.driver.vehicle.brand, [Validators.required]],

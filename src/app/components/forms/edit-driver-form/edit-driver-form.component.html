@@ -1,0 +1,45 @@
+<div class="sign--container">
+    <form [formGroup]="myForm" class="sign--form">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" [disabled]="isNotEditable" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Dni</mat-label>
+        <input type="number" matInput formControlName="dni" [disabled]="isNotEditable" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" [disabled]="isNotEditable" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Lastname</mat-label>
+        <input matInput formControlName="lastName" [disabled]="isNotEditable" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input type="number" matInput formControlName="age" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Phone</mat-label>
+        <input type="number" matInput formControlName="phone" />
+        <mat-error *ngIf="phone?.errors && phone?.touched"
+          >"Type a phone"</mat-error
+        >
+      </mat-form-field>
+
+      <button
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="this.myForm.getRawValue()"
+      [disabled]="this.myForm.invalid"
+    >
+      Edit Driver
+    </button>
+    </form>
+  </div>
