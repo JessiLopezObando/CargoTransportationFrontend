@@ -1,14 +1,36 @@
-<div class="card--container">
+<mat-card>
+  <mat-card-content>
     <app-title-section [title]="'Vehicle Information'"></app-title-section>
-    <app-label-information [label]="'Plate'" [information]="driver?.vehicle?.plate || ''"></app-label-information>
-    <app-label-information [label]="'Model'" [information]="driver?.vehicle?.model || ''"></app-label-information>
-    <app-label-information [label]="'Brand'" [information]="driver?.vehicle?.brand|| ''"></app-label-information>
-    <app-label-information [label]="'Color'" [information]="driver?.vehicle?.color || ''"></app-label-information>
-    <app-label-information [label]="'Type'" [information]="(driver?.vehicle?.type || '').toLocaleLowerCase()"></app-label-information>
-    <app-label-information [label]="'Total Capacity'" [information]="(driver?.vehicle?.totalCapacity || 0).toString()"></app-label-information>
+    <app-label-information
+      [label]="'Plate'"
+      [information]="driver?.vehicle?.plate || ''"
+    ></app-label-information>
+    <app-label-information
+      [label]="'Model'"
+      [information]="driver?.vehicle?.model || ''"
+    ></app-label-information>
+    <app-label-information
+      [label]="'Brand'"
+      [information]="driver?.vehicle?.brand || ''"
+    ></app-label-information>
+    <app-label-information
+      [label]="'Color'"
+      [information]="driver?.vehicle?.color || ''"
+    ></app-label-information>
+    <app-label-information
+      [label]="'Type'"
+      [information]="(driver?.vehicle?.type || '').toLocaleLowerCase()"
+    ></app-label-information>
+    <app-label-information
+      [label]="'Total Capacity'"
+      [information]="(driver?.vehicle?.totalCapacity || 0).toString()"
+    ></app-label-information>
 
     <div class="action--container">
-        <app-edit-vehicle-buttom [driver]="driver" (infoDriver)="updateVehicleInformation($event)"></app-edit-vehicle-buttom>
+      <app-edit-vehicle-buttom
+        [driver]="driver"
+        (infoDriver)="updateVehicleInformation($event)"
+      ></app-edit-vehicle-buttom>
     </div>
-    
-</div>
+  </mat-card-content>
+</mat-card>

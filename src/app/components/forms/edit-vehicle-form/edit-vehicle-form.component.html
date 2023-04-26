@@ -1,5 +1,5 @@
 <div class="sign--container">
-  <form [formGroup]="myForm" (change)="sendInfo()" class="sign--form">
+  <form [formGroup]="myForm" class="sign--form">
     <mat-form-field appearance="fill">
       <mat-label>Plate</mat-label>
       <input matInput formControlName="plate" />
@@ -43,5 +43,14 @@
         >"Provide us vehicle capacity"</mat-error
       >
     </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="this.myForm.getRawValue()"
+      [disabled]="this.myForm.invalid"
+    >
+      Edit Vehicle
+    </button>
   </form>
 </div>
