@@ -27,6 +27,14 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { DriverInformationComponent } from './components/cards/driver-information/driver-information.component';
+import { OrderInformationComponent } from './components/cards/order-information/order-information.component';
+import { LabelInformationComponent } from './components/atoms/label-information/label-information.component';
+import { TitleSectionComponent } from './components/atoms/title-section/title-section.component';
+import { VehicleInformationComponent } from './components/cards/vehicle-information/vehicle-information.component';
+import { EditVehicleButtomComponent } from './components/modals/edit-vehicle-buttom/edit-vehicle-buttom.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditVehicleFormComponent } from './components/forms/edit-vehicle-form/edit-vehicle-form.component';
 
 
 @NgModule({
@@ -40,7 +48,14 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     LoginPageComponent,
     NotFoundComponent,
     DriverComponent,
-    VehicleComponent
+    VehicleComponent,
+    DriverInformationComponent,
+    OrderInformationComponent,
+    LabelInformationComponent,
+    TitleSectionComponent,
+    VehicleInformationComponent,
+    EditVehicleButtomComponent,
+    EditVehicleFormComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +71,7 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     MatStepperModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
