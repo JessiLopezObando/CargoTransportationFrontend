@@ -1,16 +1,16 @@
-.sign--container{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.sign--container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-.sign--form{
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+.sign--form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas de ancho igual */
+  grid-gap: 20px;
 }
 
-mat-form-field{
-    margin: 2%;
+mat-form-field {
+  margin: 2%;
 }

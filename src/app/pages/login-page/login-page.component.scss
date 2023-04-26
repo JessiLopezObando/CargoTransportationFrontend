@@ -1,18 +1,37 @@
-.container--form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-  }
-  .slide--option{
-    margin: 2%;
-    text-align: center;
-  }
+.container--login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .slide--option p{
-    margin-left: 1%;
-    color: black;
-    width: 100%;
-  }
+.banner--login {
+  width: 100%;
+  min-height: 91.9vh;
+  background: rgb(46, 97, 84);
+  background: linear-gradient(
+    90deg,
+    rgba(46, 97, 84, 1) 0%,
+    rgba(72, 153, 139, 0.908000700280112) 68%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container--form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.slide--option {
+  margin: 2%;
+  text-align: center;
+}
+
+.slide--option p {
+  margin-left: 1%;
+  color: black;
+  width: 100%;
+}

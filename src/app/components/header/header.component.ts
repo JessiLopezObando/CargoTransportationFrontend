@@ -56,7 +56,7 @@ export class HeaderComponent {
 
   isDashboardRoute(): boolean {
     const currentUrl = this.router.url;
-    return currentUrl === '/dashboard';
+    return /^(\/|\/dashboard|\/login)$/.test(currentUrl);
   }
   
 
