@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MyValidators } from 'src/app/utils/validators';
 
 @Component({
   selector: 'app-driver',
@@ -25,7 +26,10 @@ export class DriverComponent implements OnInit {
       age: ['', [Validators.required,Validators.min(18), Validators.max(65)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
-    });
+    }, {
+      validators: MyValidators.matchPasswords
+    }
+    );
   }
 
   get name() {
