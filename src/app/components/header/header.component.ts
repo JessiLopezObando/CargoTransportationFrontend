@@ -32,10 +32,13 @@ export class HeaderComponent {
   updateDriverHeader(){
     this.tokenService.loadToken();
     this.tokenService.getToken().subscribe((token) => {
-      if (token) {
+      if (!this.jwtAuth.isTokenExpired(token)) {
         this.driverService.getDriverByEmail(this.jwtAuth.decodeToken(token).email).subscribe((customer) => {
           this.driver = customer;
         } );
+      }else{
+        this.driver = undefined;
+        this.isLogged = false;
       }
     } );
   }
