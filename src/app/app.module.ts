@@ -35,6 +35,8 @@ import { VehicleInformationComponent } from './components/cards/vehicle-informat
 import { EditVehicleButtomComponent } from './components/modals/edit-vehicle-buttom/edit-vehicle-buttom.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditVehicleFormComponent } from './components/forms/edit-vehicle-form/edit-vehicle-form.component';
+import { EditDriverButtomComponent } from './components/modals/edit-driver-buttom/edit-driver-buttom.component';
+import { EditDriverFormComponent } from './components/forms/edit-driver-form/edit-driver-form.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { EditVehicleFormComponent } from './components/forms/edit-vehicle-form/e
     TitleSectionComponent,
     VehicleInformationComponent,
     EditVehicleButtomComponent,
-    EditVehicleFormComponent
+    EditVehicleFormComponent,
+    EditDriverButtomComponent,
+    EditDriverFormComponent,
   ],
   imports: [
     BrowserModule,
