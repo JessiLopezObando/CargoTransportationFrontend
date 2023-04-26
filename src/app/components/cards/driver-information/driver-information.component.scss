@@ -1,4 +1,5 @@
-.card--container {
+mat-card {
+  margin: 2%;
   padding: 4%;
   width: 20vw;
   /* From https://css.glass */
@@ -10,8 +11,8 @@
   border: 1px solid rgba(241, 241, 241, 0.18);
 }
 
-.action--container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
+.action--container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
