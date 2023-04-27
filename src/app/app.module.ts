@@ -37,6 +37,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { EditVehicleFormComponent } from './components/forms/edit-vehicle-form/edit-vehicle-form.component';
 import { EditDriverButtomComponent } from './components/modals/edit-driver-buttom/edit-driver-buttom.component';
 import { EditDriverFormComponent } from './components/forms/edit-driver-form/edit-driver-form.component';
+import { VehicleAvailableInformationComponent } from './components/cards/vehicle-available-information/vehicle-available-information.component';
+
 
 
 @NgModule({
@@ -60,6 +62,7 @@ import { EditDriverFormComponent } from './components/forms/edit-driver-form/edi
     EditVehicleFormComponent,
     EditDriverButtomComponent,
     EditDriverFormComponent,
+    VehicleAvailableInformationComponent,
   ],
   imports: [
     BrowserModule,
