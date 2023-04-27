@@ -4,7 +4,7 @@
       <mat-label>Plate</mat-label>
       <input matInput formControlName="plate" />
       <mat-error *ngIf="plate?.errors && plate?.touched"
-        >"Type a plate following pattern AAA-000"</mat-error
+        >"Enter a plate following pattern AAA-000"</mat-error
       >
     </mat-form-field>
 
@@ -12,30 +12,37 @@
       <mat-label>Brand</mat-label>
       <input matInput formControlName="brand" />
       <mat-error *ngIf="brand?.errors && brand?.touched"
-        >"Type a brand"</mat-error
+        >"Enter a brand"</mat-error
       >
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Model</mat-label>
       <input matInput formControlName="model" />
       <mat-error *ngIf="model?.errors && model?.touched"
-        >"Type a model"</mat-error
+        >"Enter a model"</mat-error
       >
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Color</mat-label>
       <input matInput formControlName="color" />
       <mat-error *ngIf="color?.errors && color?.touched"
-        >"Type vehicle color"</mat-error
+        >"Enter vehicle color"</mat-error
       >
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Vehicle type</mat-label>
-      <input matInput formControlName="type" />
+      <!-- <input matInput formControlName="type" /> -->
+      <mat-select [(value)] = "selectedOption" formControlName="type">
+        <mat-option value = "TRUCK">Truck</mat-option>  
+        <mat-option value = "TRAILER">Trailer</mat-option>  
+        <mat-option value = "VAN">Van</mat-option>  
+        <mat-option value = "CAR">Car</mat-option>  
+        <mat-option value = "PICKUP">Pickup</mat-option>  
+      </mat-select>
       <mat-error *ngIf="type?.errors && type?.touched"
-        >"Type a vehicle type"</mat-error
-      >
+        >"Choose a vehicle type"</mat-error>
     </mat-form-field>
+    
     <mat-form-field appearance="fill">
       <mat-label>Capacity (Kg)</mat-label>
       <input type="number" matInput formControlName="totalCapacity" />
