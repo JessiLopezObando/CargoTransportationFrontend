@@ -5,6 +5,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthFireGuard } from './guards/auth-fire.guard';
+import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
     path:"dashboard",
     component: DashboardComponent,
     canActivate:[AuthFireGuard]
+  },
+  {
+    path:"delivery-request",
+    component: DeliveryPageComponent,
   },
   { path: '**', pathMatch: 'full', component: NotFoundComponent},
 ];
