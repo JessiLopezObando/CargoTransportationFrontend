@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
@@ -57,46 +58,29 @@ export class RegisterComponent {
       password: this.firstFormGroup.get("password")?.value,
     };
 
-    let checkDriver = await this.verifyEmailDriver(credentials.email);
-
-    if (!checkDriver) {
-      this.loginService
-        .register(credentials)
+      this.driverService
+        .registerDriver(driver)
+        .toPromise()
         .then(async (data) => {
           if (data) {
+            this.loginService.register(credentials).then(async (data) => {  
+            console.log("entro a linea 67");
             token = (await data?.user.getIdToken()) || "";
-            this.driverService.registerDriver(driver).subscribe((data) => {
               localStorage.setItem("token", token);
               setTimeout(() => {
                 this.tokenService.setToken(token);
                 this.router.navigateByUrl("/dashboard");
               }, 500);
-            });
+            })
           }
         })
-        .catch((error) => {
-          console.log(error);
+        .catch((error: HttpErrorResponse) => {
+          this.snackBar.open( error.error, "Cerrar", {
+            duration: 3000,
+          });
         });
-    }
+    
   }
 
-  async verifyEmailDriver(email: string) {
-    let checkDriver: boolean = false;
-    try {
-      await this.driverService
-        .getDriverByEmail(email)
-        .toPromise()
-        .then((data) => {
-          if (data) {
-            checkDriver = true;
-            this.snackBar.open("Email already exist", "Cerrar", {
-              duration: 3000,
-            });
-          }
-        });
-    } catch (error) {
-      console.error("OK");
-    }
-    return checkDriver;
-  }
+ 
 }

@@ -3,8 +3,8 @@
     <mat-form-field appearance="fill">
       <mat-label>Plate</mat-label>
       <input matInput formControlName="plate" />
-      <mat-error *ngIf="plate?.errors && plate?.touched"
-        >"Type a plate following pattern AAA-000"</mat-error
+      <mat-error *ngIf="plate?.errors?.['pattern'] && plate?.touched"
+        >"Enter a plate following pattern AAA000"</mat-error
       >
     </mat-form-field>
 

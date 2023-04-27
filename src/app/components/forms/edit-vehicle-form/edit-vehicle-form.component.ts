@@ -26,7 +26,7 @@ export class EditVehicleFormComponent {
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      plate: [this.data.driver.vehicle.plate, [Validators.required]],
+      plate: [this.data.driver.vehicle.plate, [Validators.required,  Validators.pattern(/^[A-Za-z]{3}\d{3}$/)]],
       brand: [this.data.driver.vehicle.brand, [Validators.required]],
       model: [this.data.driver.vehicle.model, [Validators.required]],
       color: [this.data.driver.vehicle.color, [Validators.required]],
