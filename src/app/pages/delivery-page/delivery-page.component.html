@@ -60,11 +60,15 @@
             </mat-error>
             </mat-form-field>
         <div>
-          <button mat-button   [disabled]="requestDeliveryForm.invalid" matStepperNext>Next</button>
+          <button mat-button   [disabled]="requestDeliveryForm.invalid" (click)="getAvailableVehicles()" matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
     <mat-step label="Fill out your address">
+      <div *ngFor="let item of drivers">
+        <app-vehicle-available-information [driver]="item" (driverId)="setDriverId($event)"></app-vehicle-available-information>
+      </div>
+
         
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
@@ -74,10 +78,11 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
+      <app-order-summary [summaryOrder]="this.requestDeliveryForm.value"></app-order-summary>
+
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="generateOrder()">Generate Order</button>
       </div>
     </mat-step>
   </mat-stepper>

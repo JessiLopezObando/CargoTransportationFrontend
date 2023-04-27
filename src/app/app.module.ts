@@ -41,6 +41,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { QuotationComponent } from './components/forms/quotation/quotation.component';
 import { VehicleAvailableInformationComponent } from './components/cards/vehicle-available-information/vehicle-available-information.component';
 import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.component';
+import { OrderSummaryComponent } from './components/cards/order-summary/order-summary.component';
 
 
 
@@ -68,6 +69,7 @@ import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.compo
     QuotationComponent,
     VehicleAvailableInformationComponent,
     DeliveryPageComponent,
+    OrderSummaryComponent,
 
   ],
   imports: [
