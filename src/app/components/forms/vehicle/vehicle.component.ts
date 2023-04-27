@@ -18,7 +18,7 @@ export class VehicleComponent {
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      plate: ['', [Validators.required]],
+      plate: ['', [Validators.required,  Validators.pattern(/^[A-Za-z]{3}\d{3}$/)]],
       brand: ['', [Validators.required]],
       model: ['', [Validators.required]],
       color: ['', [Validators.required]],

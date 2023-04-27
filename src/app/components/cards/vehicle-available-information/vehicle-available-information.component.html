@@ -1,5 +1,5 @@
 <div class="availableVehicle--container" (click)="selectVehicle(driver?.id || '')">
-    <img src="" alt="">
+    <img src="../../../../assets/images/truck.png" alt="">
     <app-label-information [label]="'Plate'" [information]="driver?.vehicle?.plate || ''"></app-label-information>
     <h3>Available capacity</h3>
     <p>{{(driver?.vehicle?.totalCapacity || 0) - (driver?.vehicle?.currentCapacity || 0)}} Kg</p>

@@ -25,7 +25,7 @@ export class DeliveryPageComponent implements OnInit{
     this.requestDeliveryForm = this.formBuilder.group({
       driverID: [''],
       customerName: ['', Validators.required],
-      customerEmail: ['', Validators.required],
+      customerEmail: ['', [Validators.required, Validators.email]],
       origin: ['', Validators.required],
       destination: ['', Validators.required],
       packageReceiver: ['', Validators.required],
