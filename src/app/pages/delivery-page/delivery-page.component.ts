@@ -23,7 +23,7 @@ export class DeliveryPageComponent implements OnInit{
 
   ngOnInit(): void {
     this.requestDeliveryForm = this.formBuilder.group({
-      driverId: [''],
+      driverID: [''],
       customerName: ['', Validators.required],
       customerEmail: ['', Validators.required],
       origin: ['', Validators.required],
@@ -69,7 +69,7 @@ export class DeliveryPageComponent implements OnInit{
 
 
   setDriverId(driverId: string){
-    this.requestDeliveryForm.get("driverId")?.setValue(driverId);
+    this.requestDeliveryForm.get("driverID")?.setValue(driverId);
   }
 
   getAvailableVehicles(){
@@ -79,6 +79,9 @@ export class DeliveryPageComponent implements OnInit{
   }
 
   generateOrder(){
+    this.shippingOrderService.generateShippingOrder(this.requestDeliveryForm.value).subscribe((response:any)=>{
+      console.log(response);
+    })
   }
 
 

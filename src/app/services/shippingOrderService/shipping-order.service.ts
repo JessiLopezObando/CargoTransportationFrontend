@@ -31,4 +31,8 @@ export class ShippingOrderService {
     return this.http.get(urlBackend+this.path+'cost/minutes/'+minutes+'/weight/'+weight, {responseType: 'text'});
   }
 
+  generateShippingOrder(shippingOrder:any){
+    return this.http.post(urlBackend+'tickets',shippingOrder);
+  }
+
 }
