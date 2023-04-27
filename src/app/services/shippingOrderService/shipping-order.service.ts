@@ -28,7 +28,7 @@ export class ShippingOrderService {
   }
 
   quoteShippingOrder(minutes:number,weight:number){
-    return this.http.get(urlBackend+this.path+'cost/minutes/'+minutes+'/weight/'+weight);
+    return this.http.get(urlBackend+this.path+'cost/minutes/'+minutes+'/weight/'+weight, {responseType: 'text'});
   }
 
 }

@@ -37,9 +37,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { EditVehicleFormComponent } from './components/forms/edit-vehicle-form/edit-vehicle-form.component';
 import { EditDriverButtomComponent } from './components/modals/edit-driver-buttom/edit-driver-buttom.component';
 import { EditDriverFormComponent } from './components/forms/edit-driver-form/edit-driver-form.component';
+import {MatSelectModule} from '@angular/material/select';
+import { QuotationComponent } from './components/forms/quotation/quotation.component';
 import { VehicleAvailableInformationComponent } from './components/cards/vehicle-available-information/vehicle-available-information.component';
 import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.component';
 import { OrderSummaryComponent } from './components/cards/order-summary/order-summary.component';
+
 
 
 @NgModule({
@@ -63,9 +66,11 @@ import { OrderSummaryComponent } from './components/cards/order-summary/order-su
     EditVehicleFormComponent,
     EditDriverButtomComponent,
     EditDriverFormComponent,
+    QuotationComponent,
     VehicleAvailableInformationComponent,
     DeliveryPageComponent,
     OrderSummaryComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -82,6 +87,7 @@ import { OrderSummaryComponent } from './components/cards/order-summary/order-su
     MatSnackBarModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatSelectModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],

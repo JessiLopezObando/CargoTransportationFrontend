@@ -12,6 +12,7 @@ export class VehicleComponent {
   @Output() infoVehicle: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
   myForm: FormGroup = new FormGroup({});
+  selectedOption: string = '';
 
   constructor(private fb: FormBuilder) { }
 

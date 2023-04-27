@@ -12,6 +12,7 @@ export class EditVehicleFormComponent {
 
   
   myForm: FormGroup = new FormGroup({});
+  selectedOption: string = '';
 
   constructor(
     private fb: FormBuilder,
