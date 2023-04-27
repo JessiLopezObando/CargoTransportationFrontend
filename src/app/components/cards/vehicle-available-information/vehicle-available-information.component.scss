@@ -1,7 +1,14 @@
-.availableVehicle--container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.availableVehicle--container {
+  display: flex;
+  padding: 3%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* From https://css.glass */
+  background: rgba(0, 144, 156, 0.51);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(0, 144, 156, 0.05);
 }
