@@ -10,6 +10,7 @@
         <div *ngFor="let item of pendingShippingOrders">
           <app-order-information
             [shippingOrder]="item"
+            [driver]="driver"            
             (shippingOrderAccepted)="onShippingOrderAccepted($event)"
             (shippingOrderRejected)="onShippingOrderRejected($event)"
           ></app-order-information>

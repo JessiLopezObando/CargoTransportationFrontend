@@ -11,14 +11,13 @@
         
         <div class="actions--container">
             <ng-container *ngIf="shippingOrder?.status?.toLocaleLowerCase()=='pending'; else elseBlock">
-                <button mat-raised-button color="primary" (click)="onAccept()">Accept</button>
+                <button mat-raised-button [disabled]="isDisabled" color="primary" (click)="onAccept()">Accept</button>
             <button mat-raised-button color="warn" (click)="onReject()">Reject</button>
               </ng-container>
               
               <ng-template #elseBlock>
                 <button mat-raised-button color="primary" (click)="onDelivered()">Delivered</button>
-              </ng-template>
-            
+              </ng-template>            
 
         </div>
 
