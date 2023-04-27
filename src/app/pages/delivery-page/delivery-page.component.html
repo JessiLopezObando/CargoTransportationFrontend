@@ -14,7 +14,7 @@
             <mat-label>Email</mat-label>
             <input matInput placeholder="Email" type="email" formControlName="customerEmail" required>
             <mat-error *ngIf="customerEmail?.errors && customerEmail?.touched">
-                "Type your email"
+                "Type a correct email"
             </mat-error>
         </mat-form-field>
           <mat-form-field appearance="fill">
@@ -40,7 +40,7 @@
             </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Package Weight</mat-label>
-            <input matInput placeholder="Weight(kg)" type="double" formControlName="weight" required>
+            <input matInput placeholder="Weight(kg)" type="number" formControlName="weight" required>
             <mat-error *ngIf="weight?.errors && weight?.touched">
                 "Weight is required"
             </mat-error>
