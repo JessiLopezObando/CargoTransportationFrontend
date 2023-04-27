@@ -10,8 +10,15 @@
         <app-label-information [label]="'Cost'" [information]="(shippingOrder?.cost || 0).toString()"></app-label-information>
         
         <div class="actions--container">
-            <button mat-raised-button color="primary" (click)="onAccept()">Accept</button>
+            <ng-container *ngIf="shippingOrder?.status?.toLocaleLowerCase()=='pending'; else elseBlock">
+                <button mat-raised-button color="primary" (click)="onAccept()">Accept</button>
             <button mat-raised-button color="warn" (click)="onReject()">Reject</button>
+              </ng-container>
+              
+              <ng-template #elseBlock>
+                <button mat-raised-button color="primary" (click)="onDelivered()">Delivered</button>
+              </ng-template>
+            
 
         </div>
 
