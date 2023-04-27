@@ -1,30 +1,42 @@
 <mat-card>
   <mat-card-content>
     <app-title-section [title]="'Vehicle Information'"></app-title-section>
-    <app-label-information
-      [label]="'Plate'"
-      [information]="driver?.vehicle?.plate || ''"
-    ></app-label-information>
-    <app-label-information
-      [label]="'Model'"
-      [information]="driver?.vehicle?.model || ''"
-    ></app-label-information>
-    <app-label-information
-      [label]="'Brand'"
-      [information]="driver?.vehicle?.brand || ''"
-    ></app-label-information>
-    <app-label-information
-      [label]="'Color'"
-      [information]="driver?.vehicle?.color || ''"
-    ></app-label-information>
-    <app-label-information
-      [label]="'Type'"
-      [information]="(driver?.vehicle?.type || '').toLocaleLowerCase()"
-    ></app-label-information>
-    <app-label-information
-      [label]="'Total Capacity'"
-      [information]="(driver?.vehicle?.totalCapacity || 0).toString()"
-    ></app-label-information>
+    <div class="info--content">
+      <div class="vehicle--info">
+        <app-label-information
+          [label]="'Plate'"
+          [information]="driver?.vehicle?.plate || ''"
+        ></app-label-information>
+        <app-label-information
+          [label]="'Model'"
+          [information]="driver?.vehicle?.model || ''"
+        ></app-label-information>
+        <app-label-information
+          [label]="'Brand'"
+          [information]="driver?.vehicle?.brand || ''"
+        ></app-label-information>
+        <app-label-information
+          [label]="'Color'"
+          [information]="driver?.vehicle?.color || ''"
+        ></app-label-information>
+        <app-label-information
+          [label]="'Type'"
+          [information]="(driver?.vehicle?.type || '').toLocaleLowerCase()"
+        ></app-label-information>
+        <app-label-information
+          [label]="'Total Capacity'"
+          [information]="(driver?.vehicle?.totalCapacity || 0).toString()"
+        ></app-label-information>
+      </div>
+      <div class="remain--info">
+        <h3>Weight on vehicle</h3>
+        <p>
+          {{
+              (driver?.vehicle?.currentCapacity || 0)
+          }} Kg
+        </p>
+      </div>
+    </div>
 
     <div class="action--container">
       <app-edit-vehicle-buttom

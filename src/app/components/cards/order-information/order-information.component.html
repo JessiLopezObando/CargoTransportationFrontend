@@ -1,0 +1,19 @@
+<mat-card [ngClass]="shippingOrder?.status?.toLocaleLowerCase()">
+    <mat-card-content>
+
+        <app-label-information [label]="'From'" [information]="shippingOrder?.origin || ''"></app-label-information>
+        <app-label-information [label]="'To'" [information]="shippingOrder?.destination || ''"></app-label-information>
+
+        <app-label-information [label]="'Package receiver'" [information]="shippingOrder?.packageReceiver || ''"></app-label-information>
+        
+        <app-label-information [label]="'Weight'" [information]="(shippingOrder?.weight || 0).toString()"></app-label-information>
+        <app-label-information [label]="'Cost'" [information]="(shippingOrder?.cost || 0).toString()"></app-label-information>
+        
+        <div class="actions--container">
+            <button mat-raised-button color="primary" (click)="onAccept()">Accept</button>
+            <button mat-raised-button color="warn" (click)="onReject()">Reject</button>
+
+        </div>
+
+    </mat-card-content>
+</mat-card>

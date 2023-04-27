@@ -43,11 +43,11 @@ export class DriverService {
   }
 
   acceptedShippingOrder(driverId:string,weight:number){
-    return this.http.patch(urlBackend+'drivers/id/'+driverId+'weight/'+weight+'/accepted',{});
+    return this.http.patch(urlBackend+'drivers/id/'+driverId+'/weight/'+weight+'/accepted',{});
   }
 
   deliveredShippingOrder(driverId:string,weight:number){
-    return this.http.patch(urlBackend+'drivers/id/'+driverId+'weight/'+weight+'/delivered',{});
+    return this.http.patch(urlBackend+'drivers/id/'+driverId+'/weight/'+weight+'/delivered',{});
   }
 
 

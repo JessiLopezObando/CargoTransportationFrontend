@@ -12,7 +12,7 @@ export class ShippingOrderService {
   constructor(private http: HttpClient) { }
 
   getShippingOrdersForDriverByStatus(driverId:string,status:string){
-    return this.http.get(urlBackend+this.path+'driverId/'+driverId+'/status/'+status);
+    return this.http.get(urlBackend+this.path+'driverId/'+driverId+'/status/'+status.toUpperCase());
   }
 
   acceptedShippingOrder(ticketId:string){

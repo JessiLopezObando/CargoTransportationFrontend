@@ -1,6 +1,6 @@
 export interface ShippingOrder {
     id?:string;
-    driverId:string;
+    driverID:string;
     origin:string;
     destination:string;
     customerName:string;

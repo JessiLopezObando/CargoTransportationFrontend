@@ -3,8 +3,25 @@
         <app-driver-information [driver]="driver"></app-driver-information>
         <app-vehicle-information [driver]="driver"></app-vehicle-information>
     </div>
-    <div class="logic--container">
-        Orders
+    <div class="orders--container">
+        <div class="incomming--container">
+            <h2>Incomming orders</h2>
+            <div class="incomming--orders">
+                <div *ngFor="let item of pendingShippingOrders">
+                    <app-order-information [shippingOrder]="item" (shippingOrderAccepted)="onShippingOrderAccepted($event)"
+                    (shippingOrderRejected)="onShippingOrderRejected($event)"
+                    ></app-order-information>
+                </div>
+                <p *ngIf="pendingShippingOrders.length==0">There's no incomming orders</p>
+            </div>
+                        
+        </div>
+        <div class="accepted--orders">
+            <div *ngFor="let item of acceptedShippingOrders">
+                <app-order-information [shippingOrder]="item"
+                ></app-order-information>
+            </div>
+        </div>
     </div>
 </div>
 

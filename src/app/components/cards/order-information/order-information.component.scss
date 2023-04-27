@@ -1,0 +1,22 @@
+mat-card{
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+.pending {
+  /* From https://css.glass */
+  background: rgba(205, 217, 0, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+}
+
+.accepted {
+  /* From https://css.glass */
+  background: rgba(0, 173, 126, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+}
