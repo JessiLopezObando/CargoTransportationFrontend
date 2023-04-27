@@ -12,7 +12,7 @@ export class QuotationComponent implements OnInit {
   @Output() quoteInfo: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
   quoteForm: FormGroup = new FormGroup({});
-  cost: number = 0;
+  cost: string = '';
 
   constructor(private formbuilder: FormBuilder, private shippingOrderService: ShippingOrderService) { }
 
@@ -46,7 +46,7 @@ export class QuotationComponent implements OnInit {
   }
 
   calculate(){
-    this.shippingOrderService.quoteShippingOrder(this.quoteForm.get('time')?.value, this.quoteForm.get('weight')?.value).subscribe((res => console.log(res)))
+    this.shippingOrderService.quoteShippingOrder(this.quoteForm.get('time')?.value, this.quoteForm.get('weight')?.value).subscribe((res => this.cost = res))
   }
 
 }
