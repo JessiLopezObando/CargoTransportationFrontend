@@ -1,0 +1,29 @@
+<div class="quote--container">
+  <h1>Quote</h1>
+  <form [formGroup]="quoteForm" (change)="sendInfo()" class="quote--form">
+        
+    <mat-form-field appearence="fill">
+      <mat-label>Origin Address</mat-label>
+      <input matInput formControlName="origin" />      
+    </mat-form-field>
+
+    <mat-form-field appearence="fill">
+      <mat-label>Destination Address</mat-label>
+      <input matInput formControlName="destination" />      
+    </mat-form-field>
+
+    <mat-form-field appearence="fill">
+      <mat-label>Weight (in Kg)</mat-label>
+      <input matInput formControlName="weight"/>      
+    </mat-form-field>
+
+    <mat-form-field appearence="fill">
+      <mat-label>Time (in minutes)</mat-label>
+      <input matInput formControlName="time" />      
+    </mat-form-field>    
+  </form>
+  <div class="buttons">
+    <button mat-raised-button color="primary" (click)="calculate()">Calculate</button>
+    <button mat-raised-button color="accent" class="button-primary" >Send a package</button>
+  </div>
+</div>
