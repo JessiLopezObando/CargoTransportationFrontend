@@ -39,6 +39,9 @@ import { EditDriverButtomComponent } from './components/modals/edit-driver-butto
 import { EditDriverFormComponent } from './components/forms/edit-driver-form/edit-driver-form.component';
 import {MatSelectModule} from '@angular/material/select';
 import { QuotationComponent } from './components/forms/quotation/quotation.component';
+import { VehicleAvailableInformationComponent } from './components/cards/vehicle-available-information/vehicle-available-information.component';
+import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.component';
+
 
 
 @NgModule({
@@ -63,6 +66,9 @@ import { QuotationComponent } from './components/forms/quotation/quotation.compo
     EditDriverButtomComponent,
     EditDriverFormComponent,
     QuotationComponent,
+    VehicleAvailableInformationComponent,
+    DeliveryPageComponent,
+
   ],
   imports: [
     BrowserModule,
