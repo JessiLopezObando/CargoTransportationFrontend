@@ -26,4 +26,5 @@
     <button mat-raised-button color="primary" (click)="calculate()">Calculate</button>
     <button mat-raised-button color="accent" class="button-primary" routerLink="/delivery-request">Send a package</button>
   </div>
+  <p *ngIf="cost" class="calculatedCost">The cost would be: {{ cost }}</p>
 </div>
