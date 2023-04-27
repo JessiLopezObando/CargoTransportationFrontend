@@ -1,0 +1,85 @@
+
+  <mat-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="requestDeliveryForm">
+      <form [formGroup]="requestDeliveryForm">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>Customer Name</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="customerName" required>
+                <mat-error *ngIf="customerName?.errors && customerName?.touched">
+                    "Type your name"
+                </mat-error>
+            </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" type="email" formControlName="customerEmail" required>
+            <mat-error *ngIf="customerEmail?.errors && customerEmail?.touched">
+                "Type your email"
+            </mat-error>
+        </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Origin</mat-label>
+            <input matInput placeholder="Origin Address" formControlName="origin" required>
+            <mat-error *ngIf="origin?.errors && origin?.touched">
+                "Origin Address required"
+            </mat-error>
+        </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Destination</mat-label>
+            <input matInput placeholder="Destination Address" formControlName="destination" required>
+            <mat-error *ngIf="destination?.errors && destination?.touched">
+                "Destination Address required"
+            </mat-error>
+            </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Package Receiver</mat-label>
+            <input matInput placeholder="Full name who receiver" formControlName="packageReceiver" required>
+            <mat-error *ngIf="packageReceiver?.errors && packageReceiver?.touched">
+                "Package Receiver name required"
+            </mat-error>
+            </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Package Weight</mat-label>
+            <input matInput placeholder="Weight(kg)" type="double" formControlName="weight" required>
+            <mat-error *ngIf="weight?.errors && weight?.touched">
+                "Weight is required"
+            </mat-error>
+            </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Estimated Time</mat-label>
+            <input matInput placeholder="minutes" type="number" formControlName="minutes" required>
+            <mat-error *ngIf="minutes?.errors && minutes?.touched">
+                "Minutes is required"
+            </mat-error>
+            </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Package Description" formControlName="description" required>
+            <mat-error *ngIf="description?.errors && description?.touched">
+                "Description is required"
+            </mat-error>
+            </mat-form-field>
+        <div>
+          <button mat-button   [disabled]="requestDeliveryForm.invalid" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step label="Fill out your address">
+        
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  
+  
