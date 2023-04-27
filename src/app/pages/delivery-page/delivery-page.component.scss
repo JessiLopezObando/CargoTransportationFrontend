@@ -22,13 +22,10 @@
 
 .available--container{
   display: grid;
-  background-color: red;
   width: 100%;
   max-height: 50vh;
   padding: 0 2%;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  align-items: center;
   grid-gap: 20px;
   overflow-y: auto;
 }
@@ -37,6 +34,22 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columnas de ancho igual */
   grid-gap: 20px;
+}
+
+.step--container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action--buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button{
+  margin: 2%;
 }
 
 @media (max-width: 1300px){

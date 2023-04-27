@@ -1,4 +1,4 @@
-<div class="availableVehicle--container" (click)="selectVehicle(driver?.id || '')">
+<div tabindex="0" class="availableVehicle--container" (click)="selectVehicle(driver?.id || '')">
     <img src="../../../../assets/images/truck.png" alt="">
     <app-label-information [label]="'Plate'" [information]="driver?.vehicle?.plate || ''"></app-label-information>
     <h3>Available capacity</h3>

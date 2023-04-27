@@ -104,19 +104,21 @@
             "Description is required"
           </mat-error>
         </mat-form-field>
-        <div>
-          <button
-            mat-button
-            [disabled]="requestDeliveryForm.invalid"
-            (click)="getAvailableVehicles()"
-            matStepperNext
-          >
-            Next
-          </button>
-        </div>
+        
       </form>
+      <div class="action--buttons">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="requestDeliveryForm.invalid"
+          (click)="getAvailableVehicles()"
+          matStepperNext
+        >
+          Next
+        </button>
+      </div>
     </mat-step>
-    <mat-step label="Fill out your address">
+    <mat-step label="Select a vehicle">
       <div class="available--container">
         <div *ngFor="let item of drivers">
           <app-vehicle-available-information
@@ -125,20 +127,33 @@
           ></app-vehicle-available-information>
         </div>
       </div>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+      <div class="action--buttons">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button
+          mat-raised-button
+          color="primary"
+          matStepperNext
+          (click)="getQuote()"
+          [disabled]="requestDeliveryForm.get('driverID')?.value.length < 5"
+        >
+          Next
+        </button>
       </div>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      <app-order-summary
-        [summaryOrder]="this.requestDeliveryForm.value"
-      ></app-order-summary>
+      <div class="step--container">
+        <app-order-summary
+          [summaryOrder]="this.requestDeliveryForm.value"
+          [cost]="cost"
+        ></app-order-summary>
+      </div>
 
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="generateOrder()">Generate Order</button>
+      <div class="action--buttons">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" (click)="generateOrder()">
+          Generate Order
+        </button>
       </div>
     </mat-step>
   </mat-stepper>
