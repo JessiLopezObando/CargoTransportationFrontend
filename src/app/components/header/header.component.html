@@ -5,6 +5,7 @@
     </nav>
     <div class="action--header">
       <h2 *ngIf="driver">Welcome {{driver.username}}</h2>
+      <a class="options--header" routerLink="/delivery-request" >Request your delivery</a>
       <a class="options--header" routerLink="/dashboard" *ngIf="!isDashboardRoute()">Driver Zone</a>
       <i class="material-icons" *ngIf="isLogged" (click)="logout()">logout</i>
     </div>
