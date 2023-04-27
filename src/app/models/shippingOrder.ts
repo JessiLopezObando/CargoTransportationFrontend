@@ -8,7 +8,7 @@ export interface ShippingOrder {
     packageReceiver:string;
     weight:number;
     minutes:number;
-    cost:number;
-    status:string;
+    cost?:number;
+    status?:string;
     description:string;
 }

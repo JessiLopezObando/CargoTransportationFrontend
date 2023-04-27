@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators, FormGroup} from '@angular/forms';
+import { Driver } from 'src/app/models/driver';
+import { DriverService } from 'src/app/services/driverService/driver.service';
+import { ShippingOrderService } from 'src/app/services/shippingOrderService/shipping-order.service';
 
 @Component({
   selector: 'app-delivery-page',
@@ -9,9 +12,12 @@ import {FormBuilder, Validators, FormGroup} from '@angular/forms';
 export class DeliveryPageComponent implements OnInit{
   
   requestDeliveryForm: FormGroup = new FormGroup({});
+  drivers: Driver[] = [];
   
   constructor(
     private formBuilder: FormBuilder,
+    private driverService:DriverService,
+    private shippingOrderService:ShippingOrderService,
     ){}
 
 
@@ -65,6 +71,16 @@ export class DeliveryPageComponent implements OnInit{
   setDriverId(driverId: string){
     this.requestDeliveryForm.get("driverId")?.setValue(driverId);
   }
+
+  getAvailableVehicles(){
+    this.driverService.getAvailableDriversWihtCapacity(this.requestDeliveryForm.get('weight')?.value).subscribe((response:any)=>{
+      this.drivers = response;
+    })
+  }
+
+  generateOrder(){
+  }
+
 
 
 

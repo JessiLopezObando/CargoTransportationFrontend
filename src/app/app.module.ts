@@ -39,6 +39,7 @@ import { EditDriverButtomComponent } from './components/modals/edit-driver-butto
 import { EditDriverFormComponent } from './components/forms/edit-driver-form/edit-driver-form.component';
 import { VehicleAvailableInformationComponent } from './components/cards/vehicle-available-information/vehicle-available-information.component';
 import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.component';
+import { OrderSummaryComponent } from './components/cards/order-summary/order-summary.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.compo
     EditDriverFormComponent,
     VehicleAvailableInformationComponent,
     DeliveryPageComponent,
+    OrderSummaryComponent,
   ],
   imports: [
     BrowserModule,
