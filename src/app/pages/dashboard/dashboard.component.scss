@@ -23,27 +23,31 @@
 }
 
 .incomming--container {
-    width: 100%;
+  width: 100%;
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: 1%;
-  min-height: 40%;
+  max-height: 35%;
   /* From https://css.glass */
   background: rgba(83, 83, 83, 0.28);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.6px);
   -webkit-backdrop-filter: blur(9.6px);
+  overflow-y: auto;
 }
 
 .incomming--orders {
-    display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  grid-gap: 20px;
+}
+
+.incomming--orders p {
+    text-align: center;
 }
 
 .accepted--orders {
@@ -52,14 +56,24 @@
   justify-content: center;
   align-items: center;
   margin: 1%;
-  min-height: 40%;
+  height: 35%;
   /* From https://css.glass */
   background: rgba(83, 83, 83, 0.28);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.6px);
   -webkit-backdrop-filter: blur(9.6px);
-  overflow-x: scroll;
+}
+
+@media (max-width: 1300px){
+
+    .incomming--container {
+        max-height: 25%;
+    }
+    
+    .incomming--orders{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -69,5 +83,22 @@
 
   .user--container {
     width: 100%;
+  }
+
+  .incomming--orders{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .orders--container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .incomming--container{
+    height: 35vh;
+    overflow-y: auto;
   }
 }

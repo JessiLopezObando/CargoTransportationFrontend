@@ -31,13 +31,13 @@ export class DashboardComponent implements OnInit {
     this.shippingOrderService
       .acceptedShippingOrder(ticketId)
       .subscribe((response: any) => {
-        if(response){
-          this.driverService.acceptedShippingOrder(response.driverID,response.weight).subscribe((response:any)=>{
-            this.refreshData();
-          }
-          );
+        if (response) {
+          this.driverService
+            .acceptedShippingOrder(response.driverID, response.weight)
+            .subscribe((response: any) => {
+              this.refreshData();
+            });
         }
-        
       });
   }
 
@@ -46,6 +46,20 @@ export class DashboardComponent implements OnInit {
       .refuseShippingOrder(ticketId)
       .subscribe((response: any) => {
         this.refreshData();
+      });
+  }
+
+  onShippingOrderDelivered(ticketId: string) {
+    this.shippingOrderService
+      .deliveredShippingOrder(ticketId)
+      .subscribe((response: any) => {
+        if (response) {
+          this.driverService
+            .deliveredShippingOrder(response.driverID, response.weight)
+            .subscribe((response: any) => {
+              this.refreshData();
+            });
+        }
       });
   }
 

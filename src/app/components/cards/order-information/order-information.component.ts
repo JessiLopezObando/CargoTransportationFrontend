@@ -11,6 +11,7 @@ export class OrderInformationComponent {
   @Input() shippingOrder:ShippingOrder | undefined;
   @Output() shippingOrderAccepted:EventEmitter<string> = new EventEmitter<string>();
   @Output() shippingOrderRejected:EventEmitter<string> = new EventEmitter<string>();
+  @Output() shippingOrderDelivered:EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
@@ -21,5 +22,10 @@ export class OrderInformationComponent {
   onReject(){
     this.shippingOrderRejected.emit(this.shippingOrder?.id);
   }
+
+  onDelivered(){
+    this.shippingOrderDelivered.emit(this.shippingOrder?.id);
+  }
+
 
 }
