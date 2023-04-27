@@ -36,6 +36,21 @@ export class DriverService {
     );
   }
 
+  //special methods for vehicle
+
+  getAvailableDriversWihtCapacity(weight:number):Observable<any>{
+    return this.http.get(urlBackend+'drivers/request/weight/'+weight);
+  }
+
+  acceptedShippingOrder(driverId:string,weight:number){
+    return this.http.patch(urlBackend+'drivers/id/'+driverId+'/weight/'+weight+'/accepted',{});
+  }
+
+  deliveredShippingOrder(driverId:string,weight:number){
+    return this.http.patch(urlBackend+'drivers/id/'+driverId+'/weight/'+weight+'/delivered',{});
+  }
+
+
 
   
 }
