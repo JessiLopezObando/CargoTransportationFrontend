@@ -1,6 +1,15 @@
 <mat-card>
     <mat-card-content>
         <mat-card-title>Order Summary</mat-card-title>
-        <app-label-information [label]="'From'" [information]="summaryOrder?.origin || ''"></app-label-information>
+        
+        <app-label-information [label]="'Origin'" [information]="summaryOrder?.origin || ''"></app-label-information>
+        <app-label-information [label]="'Destination'" [information]="summaryOrder?.destination || ''"></app-label-information>
+        <app-label-information [label]="'Customer Name'" [information]="summaryOrder?.customerName || ''"></app-label-information>
+        <app-label-information [label]="'Customer Email'" [information]="summaryOrder?.customerEmail || ''"></app-label-information>
+        <app-label-information [label]="'Package Receiver'" [information]="summaryOrder?.packageReceiver || ''"></app-label-information>
+
+        <h2>Weight: {{summaryOrder?.weight}} Kg</h2>
+        <h2>Minutes: {{summaryOrder?.minutes}}</h2>
+        <h2>Cost: $ {{cost}}</h2>
     </mat-card-content>
 </mat-card>
