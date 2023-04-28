@@ -1,1 +1,1 @@
-export const urlBackend = 'https://delicious-degree-production.up.railway.app/';
+export const urlBackend = 'https://cargotransportationbackend-production.up.railway.app/';

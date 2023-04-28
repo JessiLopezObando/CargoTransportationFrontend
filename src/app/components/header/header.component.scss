@@ -60,3 +60,24 @@ nav {
 .logo--header:hover {
   cursor: pointer;
 }
+
+a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  p {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  mat-icon {
+    display: none;
+  }
+}

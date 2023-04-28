@@ -1,59 +1,89 @@
 .quote--container {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  min-width: 30vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+h1{
+    font-weight: 800;
+}
+
+.quote--information {
+  display: flex;
 }
 
 .quote--form {
-    
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
-    background: rgba(0, 0, 0, 0.34);
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10.3px);
-    -webkit-backdrop-filter: blur(10.3px);    
+  display: flex;
+  width: 40vw;
+  flex-direction: column;
+  padding: 5%;
+  background: rgba(0, 0, 0, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.3px);
+  -webkit-backdrop-filter: blur(10.3px);
+}
+
+.quote--cost {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.quote--cost p {
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 .buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 3px;
-    
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4%;
 
-    button {
-        margin-bottom: 3px;
-        margin-top: 3px;
-    }
+  button {
+    margin: 1% 4%;
+  }
 }
 
 .button-primary {
-    background: rgb(46, 97, 84);
+  margin: 4%;
+  background: rgb(46, 97, 84);
   background: linear-gradient(
     90deg,
     rgba(46, 97, 84, 1) 0%,
     rgba(72, 153, 139, 1) 60%
   );
-  box-shadow: 0px -2px 26px 1px #888888;
-  
 }
 
 .calculatedCost {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    padding: 2%;
-    background: rgba(0, 0, 0, 0.34);
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10.3px);
-    -webkit-backdrop-filter: blur(10.3px);    
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 2%;
+  background: rgba(0, 0, 0, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.3px);
+  -webkit-backdrop-filter: blur(10.3px);
+}
+
+@media screen and (max-width: 768px) {
+    .quote--information{
+        flex-direction: column;
+    }
+
+    .quote--form{
+        width: 90%;
+    }
+
+
 }
