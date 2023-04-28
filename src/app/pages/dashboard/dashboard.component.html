@@ -4,35 +4,54 @@
     <app-vehicle-information [driver]="driver"></app-vehicle-information>
   </div>
   <div class="orders--container">
-    <h2>Incomming orders</h2>
+    <h2>Incoming orders</h2>
     <div class="incomming--container">
-      <div class="incomming--orders">
-        <div *ngFor="let item of pendingShippingOrders">
-          <app-order-information
-            [shippingOrder]="item"
-            [driver]="driver"            
-            (shippingOrderAccepted)="onShippingOrderAccepted($event)"
-            (shippingOrderRejected)="onShippingOrderRejected($event)"
-          ></app-order-information>
+      <mat-spinner *ngIf="loadingIncoming" class="spinner"></mat-spinner>
+      <div *ngIf="pendingShippingOrders.length>0 && !loadingIncoming; else otroBloque">
+        <div class="incomming--orders">
+          <div *ngFor="let item of pendingShippingOrders">
+            <app-order-information
+              [shippingOrder]="item"
+              [driver]="driver"            
+              (shippingOrderAccepted)="onShippingOrderAccepted($event)"
+              (shippingOrderRejected)="onShippingOrderRejected($event)"
+            ></app-order-information>
+          </div>
+          
         </div>
-        <p *ngIf="pendingShippingOrders.length == 0">
-          There's no incomming orders
-        </p>
       </div>
+      
+      <ng-template #otroBloque>
+        <p class="no--info" *ngIf="pendingShippingOrders.length == 0  && !loadingIncoming">
+          There's no incoming orders
+        </p>
+      </ng-template>
+      
+      
     </div>
       <h2>Accepted orders</h2>
       <div class="incomming--container">
-        <div class="incomming--orders">
-          <div *ngFor="let item of acceptedShippingOrders">
-            <app-order-information
-              [shippingOrder]="item"
-              (shippingOrderDelivered)="onShippingOrderDelivered($event)"
-            ></app-order-information>
-          </div>
-          <p *ngIf="acceptedShippingOrders.length == 0">
+        <mat-spinner *ngIf="loadingAccepted" class="spinner"></mat-spinner>
+        <div *ngIf="acceptedShippingOrders.length>0  && !loadingAccepted; else otroBloque2">
+          <div class="incomming--orders">
+            <div *ngFor="let item of acceptedShippingOrders">
+              <app-order-information
+                [shippingOrder]="item"
+                (shippingOrderDelivered)="onShippingOrderDelivered($event)"
+              ></app-order-information>
+            </div>
+        </div>
+      </div>
+        
+        <ng-template #otroBloque2>
+          <p class="no--info" *ngIf="acceptedShippingOrders.length == 0 && !loadingAccepted">
             There's no accepted orders
           </p>
-        </div>
+        </ng-template>
+        
+        
+          
+        
       </div>
   </div>
 </div>

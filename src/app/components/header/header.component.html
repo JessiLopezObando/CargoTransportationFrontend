@@ -4,9 +4,11 @@
       <!-- Navigation links go here -->
     </nav>
     <div class="action--header">
-      <h2 *ngIf="driver">Welcome {{driver.username}}</h2>
-      <a class="options--header" routerLink="/delivery-request" *ngIf="!isDeliverRoute()" ><mat-icon>all_inbox</mat-icon><p>Request your delivery</p></a>
-      <a class="options--header" routerLink="/dashboard" *ngIf="!isDashboardRoute()"><mat-icon>supervised_user_circle</mat-icon><p>Driver Zone</p></a>
+      <h2 *ngIf="driver && !isHomeRoute()">Welcome {{driver.username}}</h2>
+      <button mat-raised-button color="primary" routerLink="/delivery-request" *ngIf="!isDeliverRoute()" >Request your delivery</button>
+      <mat-icon routerLink="/delivery-request" *ngIf="!isDeliverRoute()" >all_inbox</mat-icon>
+      <mat-icon routerLink="/dashboard" *ngIf="!isDashboardRoute()">supervised_user_circle</mat-icon>
+      <button mat-raised-button color="primary" routerLink="/dashboard" *ngIf="!isDashboardRoute()">Driver Zone</button>
       <i class="material-icons" *ngIf="isLogged" (click)="logout()">logout</i>
     </div>
     

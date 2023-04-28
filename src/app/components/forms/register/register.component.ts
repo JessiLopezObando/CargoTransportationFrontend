@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from "@angular/common/http";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
@@ -13,7 +13,7 @@ import { TokenService } from "src/app/services/tokenService/token.service";
   templateUrl: "./register.component.html",
   styleUrls: ["./register.component.scss"],
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   firstFormGroup: FormGroup = new FormGroup({});
   secondFormGroup: FormGroup = new FormGroup({});
   isLinear = true;
@@ -23,8 +23,17 @@ export class RegisterComponent {
     private driverService: DriverService,
     private tokenService: TokenService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private formBuilder: FormBuilder,
   ) {}
+
+  ngOnInit(): void {
+    this.firstFormGroup =  this.formBuilder.group({
+      name: ['', [Validators.required],]
+    });
+  }
+
+  
 
   driverInfo(myForm: FormGroup) {
     this.firstFormGroup = myForm;
@@ -64,7 +73,6 @@ export class RegisterComponent {
         .then(async (data) => {
           if (data) {
             this.loginService.register(credentials).then(async (data) => {  
-            console.log("entro a linea 67");
             token = (await data?.user.getIdToken()) || "";
               localStorage.setItem("token", token);
               setTimeout(() => {

@@ -28,7 +28,7 @@ export class EditVehicleFormComponent {
     this.myForm = this.fb.group({
       plate: [this.data.driver.vehicle.plate, [Validators.required,  Validators.pattern(/^[A-Za-z]{3}\d{3}$/)]],
       brand: [this.data.driver.vehicle.brand, [Validators.required]],
-      model: [this.data.driver.vehicle.model, [Validators.required]],
+      model: ['', [Validators.required, Validators.pattern(/^(200[0-9]|201[0-9]|202[0-3])$/)]],
       color: [this.data.driver.vehicle.color, [Validators.required]],
       type: [ this.data.driver.vehicle.type, [Validators.required]],
       totalCapacity: [  this.data.driver.vehicle.totalCapacity, [Validators.required]],

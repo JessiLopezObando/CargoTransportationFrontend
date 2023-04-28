@@ -20,7 +20,7 @@ export class VehicleComponent {
     this.myForm = this.fb.group({
       plate: ['', [Validators.required,  Validators.pattern(/^[A-Za-z]{3}\d{3}$/)]],
       brand: ['', [Validators.required]],
-      model: ['', [Validators.required]],
+      model: ['', [Validators.required, Validators.pattern(/^(200[0-9]|201[0-9]|202[0-3])$/)]],
       color: ['', [Validators.required]],
       type: ['', [Validators.required]],
       totalCapacity: ['', [Validators.required]],

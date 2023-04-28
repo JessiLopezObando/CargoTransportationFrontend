@@ -18,8 +18,8 @@
     <mat-form-field appearance="fill">
       <mat-label>Model</mat-label>
       <input matInput formControlName="model" />
-      <mat-error *ngIf="model?.errors && model?.touched"
-        >"Type a model"</mat-error
+      <mat-error *ngIf="model?.errors?.['pattern'] && model?.touched"
+        >"Enter a model between 2000 to 2023"</mat-error
       >
     </mat-form-field>
     <mat-form-field appearance="fill">

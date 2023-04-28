@@ -66,6 +66,11 @@ export class HeaderComponent {
     const currentUrl = this.router.url;
     return /^(\/|\/delivery-request|\/)$/.test(currentUrl);
   }
+
+  isHomeRoute():boolean{
+    const currentUrl = this.router.url;
+    return /^(\/|\/home)$/.test(currentUrl);
+  }
   
 
 }

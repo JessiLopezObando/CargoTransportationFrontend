@@ -61,17 +61,17 @@ nav {
   cursor: pointer;
 }
 
-a{
+button{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 3%;
+  padding: 2%;
 }
 
 
-
 @media screen and (max-width: 767px) {
-  p {
+  button {
     display: none;
   }
 }

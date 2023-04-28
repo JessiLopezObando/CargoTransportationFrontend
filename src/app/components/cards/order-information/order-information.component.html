@@ -7,7 +7,8 @@
         <app-label-information [label]="'Package receiver'" [information]="shippingOrder?.packageReceiver || ''"></app-label-information>
         
         <app-label-information [label]="'Weight'" [information]="(shippingOrder?.weight || 0).toString()"></app-label-information>
-        <app-label-information [label]="'Cost'" [information]="(shippingOrder?.cost || 0).toString()"></app-label-information>
+
+        <p class="cost--info">Cost: $ {{shippingOrder?.cost}}</p>
         
         <div class="actions--container">
             <ng-container *ngIf="shippingOrder?.status?.toLocaleLowerCase()=='pending'; else elseBlock">

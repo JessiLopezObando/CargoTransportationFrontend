@@ -1,14 +1,15 @@
-mat-card{
-  flex: 0 0 auto;
+mat-card {
+  height: 100%;
 }
 
 .pending {
   /* From https://css.glass */
-  background: rgba(205, 217, 0, 0.35);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8.5px);
-  -webkit-backdrop-filter: blur(8.5px);
+background: rgba(46, 180, 255, 0.19);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.9px);
+-webkit-backdrop-filter: blur(9.9px);
+border: 1px solid rgba(46, 180, 255, 0.15);
 }
 
 .accepted {
@@ -18,4 +19,9 @@ mat-card{
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
+}
+
+.cost--info {
+  font-weight: 700;
+  font-size: 1.5em;
 }

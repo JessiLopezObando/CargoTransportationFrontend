@@ -15,6 +15,8 @@ export class DashboardComponent implements OnInit {
   driver: Driver | undefined;
   pendingShippingOrders: ShippingOrder[] = [];
   acceptedShippingOrders: ShippingOrder[] = [];
+  loadingIncoming: boolean = false;
+  loadingAccepted: boolean = false;
 
   constructor(
     private driverService: DriverService,
@@ -67,6 +69,8 @@ export class DashboardComponent implements OnInit {
     this.tokenService.loadToken();
     this.tokenService.getToken().subscribe((token) => {
       if (token) {
+        this.loadingIncoming = true;
+        this.loadingAccepted = true;
         this.driverService
           .getDriverByEmail(this.jwtAuth.decodeToken(token).email)
           .subscribe((customer: Driver) => {
@@ -76,12 +80,14 @@ export class DashboardComponent implements OnInit {
               .getShippingOrdersForDriverByStatus(this.driver.id!, "pending")
               .subscribe((shippingOrders: any) => {
                 this.pendingShippingOrders = shippingOrders;
+                this.loadingIncoming = false;
               });
 
             this.shippingOrderService
               .getShippingOrdersForDriverByStatus(this.driver.id!, "accepted")
               .subscribe((shippingOrders: any) => {
                 this.acceptedShippingOrders = shippingOrders;
+                this.loadingAccepted = false;
               });
           });
       }

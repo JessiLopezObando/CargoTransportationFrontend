@@ -78,7 +78,6 @@ export class DeliveryPageComponent implements OnInit {
 
   getAvailableVehicles() {
     this.loading = true;
-    console.log(this.requestDeliveryForm.value);
     this.driverService
       .getAvailableDriversWihtCapacity(
         this.requestDeliveryForm.get("weight")?.value

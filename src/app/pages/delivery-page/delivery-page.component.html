@@ -2,7 +2,7 @@
   <mat-stepper [linear]="true" #stepper class="delivery--stepper">
     <mat-step [stepControl]="requestDeliveryForm">
       <form [formGroup]="requestDeliveryForm" class="delivery--data">
-        <ng-template matStepLabel>Fill out your name</ng-template>
+        <ng-template matStepLabel>Package information</ng-template>
         <mat-form-field appearance="fill">
           <mat-label>Customer Name</mat-label>
           <input
@@ -121,14 +121,24 @@
     <mat-step label="Select a vehicle">      
         <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
         <div *ngIf="!loading">
-          <div class="available--container">
-            <div *ngFor="let item of drivers">
-              <app-vehicle-available-information
-                [driver]="item"
-                (driverId)="setDriverId($event)"
-              ></app-vehicle-available-information>
+          <div *ngIf="drivers.length>0; else otroBloque">
+            <div class="available--container">
+              <div *ngFor="let item of drivers">
+                <app-vehicle-available-information
+                  [driver]="item"
+                  (driverId)="setDriverId($event)"
+                ></app-vehicle-available-information>
+              </div>
+            </div> 
+          </div>
+          
+          <ng-template #otroBloque>
+            <div class="no--available">
+              <h1>No vehicles with required capacity</h1>
             </div>
-          </div> 
+          </ng-template>
+          
+          
         
         <div class="action--buttons">
           <button mat-raised-button matStepperPrevious>Back</button>

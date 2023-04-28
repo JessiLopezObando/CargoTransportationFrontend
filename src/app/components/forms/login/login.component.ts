@@ -40,7 +40,6 @@ export class LoginComponent {
     try {
       const res = await this.loginService.login(this.myForm.value);
       const token = await res.user.getIdToken();
-      console.log(token);
       localStorage.setItem('token', token);
       this.tokenService.setToken(token || '');
       this.router.navigateByUrl('/dashboard');
