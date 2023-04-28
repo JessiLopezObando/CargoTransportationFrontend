@@ -1,52 +1,66 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ShippingOrderService } from 'src/app/services/shippingOrderService/shipping-order.service';
+import { HttpErrorResponse } from "@angular/common/http";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { ShippingOrderService } from "src/app/services/shippingOrderService/shipping-order.service";
 
 @Component({
-  selector: 'app-quotation',
-  templateUrl: './quotation.component.html',
-  styleUrls: ['./quotation.component.scss']
+  selector: "app-quotation",
+  templateUrl: "./quotation.component.html",
+  styleUrls: ["./quotation.component.scss"],
 })
 export class QuotationComponent implements OnInit {
-
   @Output() quoteInfo: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
   quoteForm: FormGroup = new FormGroup({});
-  cost: string = '';
+  cost: string = "";
 
-  constructor(private formbuilder: FormBuilder, private shippingOrderService: ShippingOrderService) { }
+  constructor(
+    private formbuilder: FormBuilder,
+    private shippingOrderService: ShippingOrderService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.quoteForm = this.formbuilder.group({
-      origin: '',
-      destination: '',
+      origin: "",
+      destination: "",
       weight: 0.0,
       time: 0,
     });
   }
 
-  get origin(){
-    return this.quoteForm.get('origin')
+  get origin() {
+    return this.quoteForm.get("origin");
   }
 
-  get destination(){
-    return this.quoteForm.get('destination')
+  get destination() {
+    return this.quoteForm.get("destination");
   }
 
-  get weight(){
-    return this.quoteForm.get('weight')
+  get weight() {
+    return this.quoteForm.get("weight");
   }
 
-  get time(){
-    return this.quoteForm.get('time')
+  get time() {
+    return this.quoteForm.get("time");
   }
 
-  sendInfo(){
+  sendInfo() {
     this.quoteInfo.emit(this.quoteForm);
   }
 
-  calculate(){
-    this.shippingOrderService.quoteShippingOrder(this.quoteForm.get('time')?.value, this.quoteForm.get('weight')?.value).subscribe((res => this.cost = res))
+  calculate() {
+    this.shippingOrderService
+      .quoteShippingOrder(
+        this.quoteForm.get("time")?.value,
+        this.quoteForm.get("weight")?.value
+      )
+      .subscribe((res) => {this.cost = res},
+      (error:HttpErrorResponse)=>{
+        this.snackBar.open( error.error, "Cerrar", {
+          duration: 3000,
+        });
+      });
   }
-
 }

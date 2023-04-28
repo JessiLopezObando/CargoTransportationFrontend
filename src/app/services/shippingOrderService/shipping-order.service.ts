@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, throwError } from 'rxjs';
 import { urlBackend } from 'src/environments/settingsToStart';
 
 @Injectable({
@@ -28,11 +29,14 @@ export class ShippingOrderService {
   }
 
   quoteShippingOrder(minutes:number,weight:number){
-    return this.http.get(urlBackend+this.path+'cost/minutes/'+minutes+'/weight/'+weight, {responseType: 'text'});
+    return this.http.get(urlBackend+this.path+'cost/minutes/'+minutes+'/weight/'+weight, {responseType: 'text'})
   }
 
   generateShippingOrder(shippingOrder:any){
-    return this.http.post(urlBackend+'tickets',shippingOrder);
+    return this.http.post(urlBackend+'tickets',shippingOrder).pipe(catchError((error: HttpErrorResponse) => {
+      return throwError(error.message);
+    })
+  );;
   }
 
 }
