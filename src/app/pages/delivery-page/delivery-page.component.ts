@@ -15,6 +15,7 @@ export class DeliveryPageComponent implements OnInit {
   requestDeliveryForm: FormGroup = new FormGroup({});
   drivers: Driver[] = [];
   cost: number = 0;
+  loading: boolean = false;
 
   @ViewChild("stepper") stepper: MatStepper | undefined;
 
@@ -76,6 +77,7 @@ export class DeliveryPageComponent implements OnInit {
   }
 
   getAvailableVehicles() {
+    this.loading = true;
     console.log(this.requestDeliveryForm.value);
     this.driverService
       .getAvailableDriversWihtCapacity(
@@ -83,6 +85,7 @@ export class DeliveryPageComponent implements OnInit {
       )
       .subscribe((response: any) => {
         this.drivers = response;
+        this.loading = false;
       });
   }
 

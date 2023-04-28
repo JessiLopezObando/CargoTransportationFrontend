@@ -42,6 +42,7 @@ import { QuotationComponent } from './components/forms/quotation/quotation.compo
 import { VehicleAvailableInformationComponent } from './components/cards/vehicle-available-information/vehicle-available-information.component';
 import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.component';
 import { OrderSummaryComponent } from './components/cards/order-summary/order-summary.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -88,6 +89,7 @@ import { OrderSummaryComponent } from './components/cards/order-summary/order-su
     BrowserAnimationsModule,
     MatDialogModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
