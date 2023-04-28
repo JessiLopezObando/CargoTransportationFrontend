@@ -31,6 +31,9 @@ export class RegisterComponent implements OnInit {
     this.firstFormGroup =  this.formBuilder.group({
       name: ['', [Validators.required],]
     });
+    this.secondFormGroup =  this.formBuilder.group({
+      plate: ['', [Validators.required],]
+    });
   }
 
   

@@ -17,7 +17,7 @@
         <app-vehicle (infoVehicle)="vehicleInfo($event)"></app-vehicle>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" (click)="registerDriver()">
+          <button mat-raised-button color="primary" [disabled]="secondFormGroup.invalid" (click)="registerDriver()">
             Register
           </button>
         </div>
