@@ -118,27 +118,32 @@
         </button>
       </div>
     </mat-step>
-    <mat-step label="Select a vehicle">
-      <div class="available--container">
-        <div *ngFor="let item of drivers">
-          <app-vehicle-available-information
-            [driver]="item"
-            (driverId)="setDriverId($event)"
-          ></app-vehicle-available-information>
+    <mat-step label="Select a vehicle">      
+        <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+        <div *ngIf="!loading">
+          <div class="available--container">
+            <div *ngFor="let item of drivers">
+              <app-vehicle-available-information
+                [driver]="item"
+                (driverId)="setDriverId($event)"
+              ></app-vehicle-available-information>
+            </div>
+          </div> 
+        
+        <div class="action--buttons">
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button
+            mat-raised-button
+            color="primary"
+            matStepperNext
+            (click)="getQuote()"
+            [disabled]="requestDeliveryForm.get('driverID')?.value.length < 5"
+          >
+            Next
+          </button>
         </div>
-      </div>
-      <div class="action--buttons">
-        <button mat-raised-button matStepperPrevious>Back</button>
-        <button
-          mat-raised-button
-          color="primary"
-          matStepperNext
-          (click)="getQuote()"
-          [disabled]="requestDeliveryForm.get('driverID')?.value.length < 5"
-        >
-          Next
-        </button>
-      </div>
+        </div>       
+    
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
