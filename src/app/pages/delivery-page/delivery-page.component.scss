@@ -52,6 +52,17 @@ button{
   margin: 2%;
 }
 
+mat-spinner {
+  height: 50vh;  
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media (max-width: 1300px){
   .available--container{
     grid-template-columns: repeat(2, 1fr);
