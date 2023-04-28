@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-content>
+        <app-title-section [title]="'Driver Information'"></app-title-section>
+        <app-label-information [label]="'Name'" [information]="driver?.name || ''"></app-label-information>
+        <app-label-information [label]="'Last Name'" [information]="driver?.lastName || ''"></app-label-information>
+        <app-label-information [label]="'Email'" [information]="driver?.email || ''"></app-label-information>
+        <app-label-information [label]="'Phone'" [information]="driver?.phone || ''"></app-label-information>
+        <app-label-information [label]="'Age'" [information]="(driver?.age || 0).toString()"></app-label-information>
+        <app-label-information [label]="'Dni'" [information]="driver?.dni || ''"></app-label-information>
+    
+        
+        <div class="action--container">
+            <app-edit-driver-buttom [driver]="driver" (infoDriver)="updateDriverInformation($event)"></app-edit-driver-buttom>
+        </div></mat-card-content>
+  </mat-card>
+

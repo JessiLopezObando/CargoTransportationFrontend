@@ -1,0 +1,83 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: rgb(46, 97, 84);
+  background: linear-gradient(
+    90deg,
+    rgba(46, 97, 84, 1) 0%,
+    rgba(72, 153, 139, 1) 60%
+  );
+  box-shadow: 0px -2px 26px 1px #888888;
+  height: 6vh;
+}
+
+.logo {
+  /* Your logo styles go here */
+}
+
+nav {
+  /* Your navigation styles go here */
+}
+
+.action--header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 5vh;
+
+  h2 {
+    margin: 0 15px 0 15px;
+  }
+
+  i {
+    margin: 0 15px 0 15px;
+    cursor: pointer;
+  }
+}
+
+.options--header {
+  display: block;
+  padding: 10px;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+.logo--header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 3vh;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+.logo--header:hover {
+  cursor: pointer;
+}
+
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3%;
+  padding: 2%;
+}
+
+
+@media screen and (max-width: 767px) {
+  button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  mat-icon {
+    display: none;
+  }
+}

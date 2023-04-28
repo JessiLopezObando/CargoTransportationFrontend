@@ -1,0 +1,26 @@
+.availableVehicle--container {
+  display: flex;
+  padding: 3%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.2px);
+  -webkit-backdrop-filter: blur(11.2px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.availableVehicle--container:hover {
+  cursor: pointer;
+}
+
+.availableVehicle--container:focus {
+  box-shadow: -1px 3px 15px 1px #c49fff;
+}
+
+img {
+  max-width: 60%;
+}

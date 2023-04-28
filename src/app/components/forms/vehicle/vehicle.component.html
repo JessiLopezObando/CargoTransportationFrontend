@@ -1,0 +1,54 @@
+<div class="sign--container">
+  <form [formGroup]="myForm" (change)="sendInfo()" class="sign--form">
+    <mat-form-field appearance="fill">
+      <mat-label>Plate</mat-label>
+      <input matInput formControlName="plate" />
+      <mat-error *ngIf="plate?.errors?.['pattern'] && plate?.touched"
+        >"Enter a plate following pattern AAA000"</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Brand</mat-label>
+      <input matInput formControlName="brand" />
+      <mat-error *ngIf="brand?.errors && brand?.touched"
+        >"Enter a brand"</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Model</mat-label>
+      <input type="number" matInput formControlName="model" />
+      <mat-error *ngIf="model?.errors?.['pattern'] && model?.touched"
+        >"Enter a model between 2000 to 2023"</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Color</mat-label>
+      <input matInput formControlName="color" />
+      <mat-error *ngIf="color?.errors && color?.touched"
+        >"Enter vehicle color"</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Vehicle type</mat-label>
+      <!-- <input matInput formControlName="type" /> -->
+      <mat-select [(value)] = "selectedOption" formControlName="type">
+        <mat-option value = "TRUCK">Truck</mat-option>  
+        <mat-option value = "TRAILER">Trailer</mat-option>  
+        <mat-option value = "VAN">Van</mat-option>  
+        <mat-option value = "CAR">Car</mat-option>  
+        <mat-option value = "PICKUP">Pickup</mat-option>  
+      </mat-select>
+      <mat-error *ngIf="type?.errors && type?.touched"
+        >"Choose a vehicle type"</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Capacity (Kg)</mat-label>
+      <input type="number" matInput formControlName="totalCapacity" />
+      <mat-error *ngIf="totalCapacity?.errors && totalCapacity?.touched"
+        >"Provide us vehicle capacity"</mat-error
+      >
+    </mat-form-field>
+  </form>
+</div>

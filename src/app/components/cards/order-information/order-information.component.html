@@ -1,0 +1,26 @@
+<mat-card [ngClass]="shippingOrder?.status?.toLocaleLowerCase()">
+    <mat-card-content>
+
+        <app-label-information [label]="'From'" [information]="shippingOrder?.origin || ''"></app-label-information>
+        <app-label-information [label]="'To'" [information]="shippingOrder?.destination || ''"></app-label-information>
+
+        <app-label-information [label]="'Package receiver'" [information]="shippingOrder?.packageReceiver || ''"></app-label-information>
+        
+        <app-label-information [label]="'Weight'" [information]="(shippingOrder?.weight || 0).toString()"></app-label-information>
+
+        <p class="cost--info">Cost: $ {{shippingOrder?.cost}}</p>
+        
+        <div class="actions--container">
+            <ng-container *ngIf="shippingOrder?.status?.toLocaleLowerCase()=='pending'; else elseBlock">
+                <button mat-raised-button [disabled]="isDisabled" color="primary" (click)="onAccept()">Accept</button>
+            <button mat-raised-button color="warn" (click)="onReject()">Reject</button>
+              </ng-container>
+              
+              <ng-template #elseBlock>
+                <button mat-raised-button color="primary" (click)="onDelivered()">Delivered</button>
+              </ng-template>            
+
+        </div>
+
+    </mat-card-content>
+</mat-card>

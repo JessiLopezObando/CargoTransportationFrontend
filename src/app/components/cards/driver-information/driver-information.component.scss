@@ -1,0 +1,24 @@
+mat-card {
+  margin-top: 1%;
+  padding: 4%;
+  width: 30vw;
+  /* From https://css.glass */
+  background: rgba(241, 241, 241, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.7px);
+  -webkit-backdrop-filter: blur(6.7px);
+  border: 1px solid rgba(241, 241, 241, 0.18);
+}
+
+.action--container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  mat-card {
+    width: 80vw;
+  }
+}

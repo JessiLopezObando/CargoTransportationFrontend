@@ -1,0 +1,1 @@
+export const urlBackend = 'https://cargotransportationbackend-production.up.railway.app/';

@@ -1,0 +1,17 @@
+.sign--container{
+    width: 90vw;
+    max-width: 500px; 
+}
+
+.sign--form {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.3px);
+  -webkit-backdrop-filter: blur(10.3px);
+}

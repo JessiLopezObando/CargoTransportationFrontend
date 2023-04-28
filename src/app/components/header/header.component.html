@@ -1,0 +1,15 @@
+<header class="header">
+    <div class="logo"><a routerLink="/home"><img class="logo--header" src="../../../assets/images/slogan.png" alt=""></a></div>
+    <nav>
+      <!-- Navigation links go here -->
+    </nav>
+    <div class="action--header">
+      <h2 *ngIf="driver && !isHomeRoute()">Welcome {{driver.username}}</h2>
+      <button mat-raised-button color="primary" routerLink="/delivery-request" *ngIf="!isDeliverRoute()" >Request your delivery</button>
+      <mat-icon routerLink="/delivery-request" *ngIf="!isDeliverRoute()" >all_inbox</mat-icon>
+      <mat-icon routerLink="/dashboard" *ngIf="!isDashboardRoute()">supervised_user_circle</mat-icon>
+      <button mat-raised-button color="primary" routerLink="/dashboard" *ngIf="!isDashboardRoute()">Driver Zone</button>
+      <i class="material-icons" *ngIf="isLogged" (click)="logout()">logout</i>
+    </div>
+    
+  </header>

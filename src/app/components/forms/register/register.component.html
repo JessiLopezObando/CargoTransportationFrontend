@@ -1,0 +1,27 @@
+<div class="sign--container">
+  <mat-stepper [linear]="isLinear" #stepper class="register--stepper">
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Driver Info</ng-template>
+        <app-driver
+          [buttonText]="'next'"
+          (infoDriver)="driverInfo($event)"
+        ></app-driver>
+        <div>
+          <button mat-raised-button color="primary" [disabled]="firstFormGroup.invalid" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Vehicle Info">
+      <form [formGroup]="secondFormGroup">
+        <app-vehicle (infoVehicle)="vehicleInfo($event)"></app-vehicle>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" [disabled]="secondFormGroup.invalid" (click)="registerDriver()">
+            Register
+          </button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-stepper>
+</div>

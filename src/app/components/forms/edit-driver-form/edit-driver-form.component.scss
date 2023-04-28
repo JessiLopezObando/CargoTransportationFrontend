@@ -1,0 +1,17 @@
+.sign--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+  }
+  
+  .sign--form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de ancho igual */
+    grid-gap: 10px;
+  }
+  
+  mat-form-field {
+    margin: 2%;
+  }
+  

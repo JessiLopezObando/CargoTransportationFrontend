@@ -1,0 +1,18 @@
+<div class="container--login">
+  <div class="banner--login"><img src="../../../assets/images/LogoCargoMaster.png"/></div>
+  <div class="container--form">
+    <mat-slide-toggle (change)="onClickSlideToggle()" class="slide--option">
+      <p>
+        {{ showText }}
+      </p>
+    </mat-slide-toggle>
+
+    <ng-template [ngIf]="!showRegisterForm" [ngIfElse]="register">
+      <app-login></app-login>
+    </ng-template>
+
+    <ng-template #register>
+      <app-register></app-register>
+    </ng-template>
+  </div>
+</div>
